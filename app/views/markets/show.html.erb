@@ -1,0 +1,10 @@
+<h1><%= @market[:attributes][:name] %></h1>
+<h5><%= @market[:attributes][:street] %></h5>
+<h5><%= @market[:attributes][:city] %>
+, <%= @market[:attributes][:state] %>
+, <%= @market[:attributes][:zip] %></h5>
+<br>
+<h4>Vendors at our Market</h4>
+<% @vendors.each do |vendor| %>
+<p><%= link_to vendor[:attributes][:name], vendor_path(vendor) %></p>
+<% end %>

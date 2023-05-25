@@ -1,0 +1,9 @@
+<h1>Markets</h1>
+
+<% @markets.each do |market| %>
+  <div id="market-<%= market[:id] %>">
+  <p><%= link_to market[:attributes][:name], market_path(market) %>
+     <%= market[:attributes][:city] %> 
+     <%= market[:attributes][:state] %></p> 
+  </div>
+<% end %>
