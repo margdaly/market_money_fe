@@ -1,9 +1,37 @@
-<h1>Markets</h1>
+<div id='title'>
+  <h1 style="text-align: center"> Markets</h1>
+</div>
 
-<% @markets.each do |market| %>
-  <div id="market-<%= market[:id] %>">
-  <p><%= link_to market[:attributes][:name], market_path(market) %>
-     <%= market[:attributes][:city] %> 
-     <%= market[:attributes][:state] %></p> 
-  </div>
-<% end %>
+<section id="markets-table">
+  <table style="border: 1px solid black; margin: 0 auto;">
+    <tr style=>
+      <th style="border: 1px solid black">
+        Name
+      </th>
+      <th style="border: 1px solid black">
+        City
+      </th>
+      <th style="border: 1px solid black">
+        State
+      </th>
+      <th style="border: 1px solid black">
+      </th>
+    </tr>
+    <% @markets.each do |market| %>
+      <tr>
+        <td style="border: 1px solid black;">
+          <%= market[:attributes][:name] %>
+        </td>
+        <td style="border: 1px solid black;">
+          <%= market[:attributes][:city] %>
+        </td>
+        <td style="border: 1px solid black;">
+          <%= market[:attributes][:state] %>
+        </td>
+        <td>
+          <%= button_to "More Info", market_path(market[:id]), method: :get %>
+        </td>
+      </tr>
+      <% end %>
+  </table>
+</section>
